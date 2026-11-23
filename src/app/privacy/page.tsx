@@ -171,11 +171,17 @@ export default function PrivacyPage() {
 
       <h2 id="retention">6. How long we keep it</h2>
       <ul>
-        <li>Account data: while your account is active, then deleted within {retention.afterDeletionDays} days of the account being deleted.</li>
+        <li>
+          Your account: while it is active. When you delete it, your name, email address and
+          phone number are removed straight away, and you are signed out everywhere.
+        </li>
+        <li>Emergency contacts you added: removed when you delete your account.</li>
         <li>Installation photos: {retention.installationEvidenceDays} days after the installation is verified.</li>
-        <li>SOS records: {retention.sosMonths} months, so that any dispute about an incident can be resolved.</li>
+        <li>
+          Vehicle location history, journeys and SOS records: kept with the fleet they belong to.
+          If you delete your account, they stay with the fleet without your name.
+        </li>
         <li>Billing and payment records: for as long as Kenyan tax and accounting law requires.</li>
-        <li>Vehicle location history: while the fleet&apos;s account is active.</li>
       </ul>
 
       <h2 id="security">7. How we protect it</h2>

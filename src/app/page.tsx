@@ -4,9 +4,9 @@ import { WakilMark } from "@/components/WakilMark";
 import { site } from "@/lib/site";
 
 /*
- * Every claim here is checked against the Fleet app as built (Nov 2026).
- * Journeys and the activity feed are still placeholders in the app, and the
- * vehicle panic button is switched off, so none of them is promised here.
+ * Every claim here is checked against the Fleet app on origin/main
+ * (23 Nov 2026). The vehicle panic button is switched off, so it is not
+ * promised here.
  */
 
 const features = [
@@ -14,6 +14,16 @@ const features = [
     title: "Live fleet map",
     body: "See every vehicle on one map with its speed, ignition and current driver. Each vehicle shows whether it is live, parked or offline, and when it last reported.",
     icon: "M12 21s-6.5-5.6-6.5-11A6.5 6.5 0 0 1 18.5 10c0 5.4-6.5 11-6.5 11Zm0-8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z",
+  },
+  {
+    title: "Journeys you can replay",
+    body: "Every trip is recorded with where it started and ended, how long it took and how far it went. Play a journey back on the map to see the route.",
+    icon: "M4 19c2-6 5-3 7-8s4-6 9-6M4 19h.01M20 5h.01M6 19a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm16-14a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z",
+  },
+  {
+    title: "Activity and alerts",
+    body: "One feed of what needs your attention: SOS events, and trackers that stop reporting and start again. Alerts also arrive as notifications.",
+    icon: "M6 8a6 6 0 1 1 12 0c0 7 3 8 3 8H3s3-1 3-8Zm4.3 12a1.9 1.9 0 0 0 3.4 0",
   },
   {
     title: "Drivers and assignments",
@@ -84,7 +94,7 @@ const faqs = [
   },
   {
     q: "Can I delete my account?",
-    a: "Yes. See how to delete your account and what happens to your data.",
+    a: "Yes. Drivers and managers delete their account in the app, under Settings. A fleet Owner requests closure in the app and Wakil closes the fleet with them.",
     link: { href: "/delete-account", label: "Delete your account" },
   },
 ] as const;
@@ -191,7 +201,7 @@ export default function HomePage() {
               Know where every vehicle is. Reach your driver when it matters.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-on-ink-2">
-              Wakil Fleet puts your vehicles on one live map, keeps track of who is driving, and
+              Wakil Fleet puts your vehicles on one live map, records every journey, and
               sends an SOS to the right people. The tracker is fitted and tested by
               Wakil technicians.
             </p>
@@ -223,7 +233,7 @@ export default function HomePage() {
               Everything you need to run a fleet you can trust
             </h2>
           </div>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((f) => (
               <article key={f.title} className="rounded-2xl border border-line bg-white p-6">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-tint text-ink">

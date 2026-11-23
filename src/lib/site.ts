@@ -9,7 +9,7 @@ export const site = {
   mainSiteUrl: "https://wakilsecurity.com",
   mainSiteName: "Wakil Security",
   description:
-    "Wakil Fleet is vehicle tracking and safety for fleets in Kenya: live location, speed and ignition, driver assignments, and an SOS that reaches the right people, on a tracker installed and tested by Wakil technicians.",
+    "Wakil Fleet is vehicle tracking and safety for fleets in Kenya: live location, journeys you can replay, alerts, driver assignments, and an SOS that reaches the right people, on a tracker installed and tested by Wakil technicians.",
   appBundleId: "com.wakilsecurity.fleet",
   legalUpdated: "23 November 2026",
   company: {
@@ -21,8 +21,8 @@ export const site = {
     privacy: "contact@wakilsecurity.com",
   },
   retention: {
-    afterDeletionDays: 30,
-    sosMonths: 12,
+    // Requests made by email (people who cannot sign in) are done within this.
+    emailRequestDays: 30,
     installationEvidenceDays: 90,
   },
 } as const;
