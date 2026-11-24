@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { WakilMark } from "@/components/WakilMark";
-import { site } from "@/lib/site";
+import { getStartedHref, site } from "@/lib/site";
 
 /*
  * Every claim here is checked against the Fleet app on origin/main
@@ -206,12 +206,12 @@ export default function HomePage() {
               Wakil technicians.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="#get-started"
+              <a
+                href={getStartedHref}
                 className="rounded-full bg-yellow px-6 py-3 text-center font-semibold text-ink transition-opacity hover:opacity-90"
               >
                 Get Wakil Fleet
-              </Link>
+              </a>
               <Link
                 href="#how-it-works"
                 className="rounded-full border border-ink-line px-6 py-3 text-center font-semibold text-on-ink transition-colors hover:bg-ink-raised"
@@ -345,7 +345,7 @@ export default function HomePage() {
             installation.
           </p>
           <a
-            href={`mailto:${site.email.support}?subject=Wakil%20Fleet`}
+            href={getStartedHref}
             className="mt-8 inline-block rounded-full bg-ink px-7 py-3 font-semibold text-on-ink transition-opacity hover:opacity-90"
           >
             Email {site.email.support}

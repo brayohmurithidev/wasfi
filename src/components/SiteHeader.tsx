@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { nav, site } from "@/lib/site";
+import { getStartedHref, nav, site } from "@/lib/site";
 import { WakilMark } from "./WakilMark";
 
 export function SiteHeader() {
@@ -19,12 +19,12 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link
-          href="/#get-started"
+        <a
+          href={getStartedHref}
           className="rounded-full bg-yellow px-4 py-2 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
         >
           Get started
-        </Link>
+        </a>
       </div>
     </header>
   );

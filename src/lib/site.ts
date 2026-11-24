@@ -27,6 +27,13 @@ export const site = {
   },
 } as const;
 
+// "Get started": opens an email to Wakil straight away (Brian, 24 Nov).
+export const getStartedHref = `mailto:${site.email.support}?subject=${encodeURIComponent(
+  "Wakil Fleet: book an installation",
+)}&body=${encodeURIComponent(
+  "Hello Wakil,\n\nI'd like to use Wakil Fleet.\n\nCompany:\nNumber of vehicles:\nPhone:\n",
+)}`;
+
 export const nav = [
   { href: "/#features", label: "Features" },
   { href: "/#how-it-works", label: "How it works" },
