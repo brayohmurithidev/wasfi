@@ -36,6 +36,9 @@ body {
 }
 
 /* Long-form legal text. */
+.prose-legal > :first-child {
+  margin-top: 0;
+}
 .prose-legal h2 {
   font-size: 1.25rem;
   font-weight: 700;
